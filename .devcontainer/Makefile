@@ -7,6 +7,17 @@ EXTERNAL_REPO := https://github.com/gitricko/hermes-codespace
 EXTERNAL_DEVC := $(EXTERNAL_DIR)/.devcontainer
 
 # === Development Commands ===
+check-deps:
+	@echo "Checking dependencies for updates"
+	./scripts/check-deps.sh
+
+sync-readme-badges:
+	@echo "Syncing README badges from post-create-cmd.sh"
+	./scripts/sync-readme-badges.sh
+
+sync-readme-badges-check:
+	@echo "Checking README badges are in sync"
+	./scripts/sync-readme-badges.sh --check
 
 install:
 	@echo "Installing dependencies..."
